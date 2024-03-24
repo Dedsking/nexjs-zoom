@@ -4,6 +4,7 @@ import AudioVolumeIndicator from "@/components/AudioVolumeIndicator";
 import Button, { buttonClassname } from "@/components/Button";
 import FlexibleCallLayout from "@/components/FlexibleCallLayout";
 import PermissionPropmpt from "@/components/PermissionPrompt";
+import RecordingsList from "@/components/RecordingsList";
 import useLoadCall from "@/hooks/useLoadCall";
 import useStreamCall from "@/hooks/useStreamCall";
 import { useUser } from "@clerk/nextjs";
@@ -196,6 +197,10 @@ function MeetingEndedScreen() {
       <Link href={"/"} className={buttonClassname}>
         Go Home
       </Link>
+      <div className="space-y-3">
+        <h2 className="text-center text-2xl font-bold">Recordings</h2>
+        <RecordingsList />
+      </div>
     </div>
   );
 }
