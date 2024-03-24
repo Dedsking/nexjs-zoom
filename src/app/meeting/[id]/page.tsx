@@ -7,12 +7,9 @@ interface PageProps {
   searchParams: { guest?: string };
 }
 
-export function generateMetaData({
-  params: { id },
-  searchParams: { guest },
-}: PageProps) {
+export function generateMetadata({ params: { id } }: PageProps) {
   return {
-    title: `Meeting ${id} ${guest && "Guest"}`,
+    title: `Meeting ${id}`,
   };
 }
 
