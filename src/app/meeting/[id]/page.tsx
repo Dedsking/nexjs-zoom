@@ -4,12 +4,15 @@ import MeetingPage from "./MeetingPage";
 
 interface PageProps {
   params: { id: string };
-  searchParams: { guest: string };
+  searchParams: { guest?: string };
 }
 
-export function generateMetaData({ params: { id } }: PageProps) {
+export function generateMetaData({
+  params: { id },
+  searchParams: { guest },
+}: PageProps) {
   return {
-    title: `Meeting ${id}`,
+    title: `Meeting ${id} ${guest && "Guest"}`,
   };
 }
 
